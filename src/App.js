@@ -1,18 +1,25 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import Home from './components/Home'
+import Search from './components/search'
+import Result from './components/result'
 import './styles/style.scss'
 
+
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter >
+    <NavBar className='blueBackground' />
     <Switch>
-      <Route exact path="/project-2" component={Home}/>
+      <Route exact path="/project-2/home" component={Home} />
+      <Route exact path="/project-2/search" component={Search} />
+      <Route exact path="/project-2/result" component={Result} />
     </Switch>
-  </BrowserRouter>
+  </BrowserRouter >
 )
 
-const Home = () => {
-  return <h1>Hello world</h1>
-}
+// const Home = () => {
+//   return <h1>Hello world</h1>
+// }
 
 export default App
