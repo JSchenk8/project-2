@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-export default function Search({ match, search, location }) {
+export default function Search({ location }) {
   const [results, updateResults] = useState([])
   const [actorID, updateActorID] = useState(null)
 
@@ -25,17 +25,26 @@ export default function Search({ match, search, location }) {
     if (option === 'movie') {
       axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=${process.env.apikey}`)
         .then(({ data }) => {
-          updateResults(data.results)
+          if (data.results.length === 0) {
+            updateResults(['error'])
+          } else {
+            updateResults(data.results)
+          }
+
         })
     }
     if (option === 'person') {
       axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=${process.env.apikey}`)
         .then(({ data }) => {
-          updateResults(data.results)
-          updateActorID(data.results[0].id)
+          if (data.results.length === 0) {
+            updateResults(['error'])
+          } else {
+            updateResults(data.results)
+            updateActorID(data.results[0].id)
+          }
         })
     }
-    // if(location.state === 'actor')
+
   }, [])
   useEffect(() => {
 
@@ -50,18 +59,18 @@ export default function Search({ match, search, location }) {
   return <div className='container'>
     <div className='columns is-multiline'>{results.map((result, index) => {
       return <div key={index} className='column is-one-fifth card-image grow3'>
-        <Link to={{
+        <Link to={result === 'error' ? { pathname: '/project-2/home' } : {
           pathname: '/project-2/result/',
           state: { resultState: result.id }
         }} >
           <figure className='image is-2by3'>
-            <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${result.poster_path}`} />
+            <img src={result === 'error' ? 'https://media.tenor.com/images/d57147e39135ab74561300b307ca3a60/tenor.gif' : `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${result.poster_path}`} />
           </figure>
         </Link>
       </div>
     })}
     </div>
-  </div>
+  </div >
 
 
 }

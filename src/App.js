@@ -10,7 +10,7 @@ import './styles/style.scss'
 
 const App = () => (
   <BrowserRouter >
-    <NavBar className='blueBackground' />
+    <NavBar />
     <Switch>
       <Route exact path="/project-2/home" component={Home} />
       <Route exact path="/project-2/search" component={Search} />
@@ -20,8 +20,6 @@ const App = () => (
   </BrowserRouter >
 )
 
-// const Home = () => {
-//   return <h1>Hello world</h1>
-// }
+
 
 export default App

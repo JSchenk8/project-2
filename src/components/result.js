@@ -4,11 +4,11 @@ import { Link, StaticRouter } from 'react-router-dom'
 import { reverse } from 'lodash'
 
 
-export default function Result({ location, history }) {
+export default function Result({ location }) {
 
   const filmID = location.state.resultState
-  console.log(location)
-  const [movie, updateMovie] = useState({ poster_path: '' })
+
+  const [movie, updateMovie] = useState({ poster_path: '', release_date: '' })
   const [similarMovies, updateSimilarMovies] = useState([])
   const [filmReview, updateFilmReview] = useState({
     link: {
@@ -22,13 +22,13 @@ export default function Result({ location, history }) {
     axios.get(`https://api.themoviedb.org/3/movie/${filmID}?api_key=${process.env.apikey}`)
       .then(({ data }) => {
         updateMovie(data)
-        getReview(data.original_title.replace(/ /g, '_').toLowerCase())
+        getReview(data.title.replace(/ /g, '_').toLowerCase())
 
       })
     axios.get(`https://api.themoviedb.org/3/movie/${filmID}/similar?api_key=${process.env.apikey}`)
       .then(({ data }) => {
         updateSimilarMovies(data.results)
-        console.log('this is similar movies', data.results)
+
       })
 
 
@@ -39,12 +39,20 @@ export default function Result({ location, history }) {
   }, [])
   ///NYT film review fetch 
   function getReview(filmName) {
-    console.log('THIS IS BETTER FILMNAME', filmName)
+
     axios.get(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${filmName}&api-key=${process.env.nytapikey}
     `)
       .then(({ data }) => {
-        console.log('this is NYT review', data)
-        updateFilmReview(_.reverse(data.results)[0])
+
+        if (!data.results) {
+          updateFilmReview({
+            link: {
+              url: ''
+            }
+          })
+        } else {
+          updateFilmReview(_.reverse(data.results)[0])
+        }
 
       })
 
@@ -69,7 +77,7 @@ export default function Result({ location, history }) {
             <h2>{movie.title}</h2>
             <h3>{movie.tagline}</h3>
             <p>{movie.overview}</p>
-            <p><b>Released:</b> {movie.release_date}</p>
+            <p><b>Released:</b> {movie.release_date.slice(0, 4)}</p>
             <p><b>What the <i>New York Times</i> said:</b><br /> {filmReview.summary_short}</p>
             <a href={filmReview.link.url} target='_blank'>Read the full review...</a>
           </div>

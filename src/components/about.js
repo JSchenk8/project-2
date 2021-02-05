@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
+import React from 'react'
+
 
 export default function About() {
 
@@ -19,7 +18,7 @@ export default function About() {
 <br /><br />
                   Many thanks,
 <br /><br />
-        <a href='https://github.com/clem-code'>Clement</a> and <a href='https://github.com/JSchenk8'>Joseph</a></p>
+        <a target='_blank' href='https://github.com/clem-code'>Clement</a> and <a target='_blank' href='https://github.com/JSchenk8'>Joseph</a></p>
     </div >
   </div>
 
