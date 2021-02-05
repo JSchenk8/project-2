@@ -23,13 +23,13 @@ export default function Search({ match, search, location }) {
   useEffect(() => {
 
     if (option === 'movie') {
-      axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=6be0f587527d60e02a3f3dcf2163bc43`)
+      axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=${process.env.apikey}`)
         .then(({ data }) => {
           updateResults(data.results)
         })
     }
     if (option === 'person') {
-      axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=6be0f587527d60e02a3f3dcf2163bc43`)
+      axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=${process.env.apikey}`)
         .then(({ data }) => {
           updateResults(data.results)
           updateActorID(data.results[0].id)
@@ -39,7 +39,7 @@ export default function Search({ match, search, location }) {
   }, [])
   useEffect(() => {
 
-    axios.get(`https://api.themoviedb.org/3/person/${actorID}/movie_credits?api_key=6be0f587527d60e02a3f3dcf2163bc43`)
+    axios.get(`https://api.themoviedb.org/3/person/${actorID}/movie_credits?api_key=${process.env.apikey}`)
       .then(({ data }) => {
         updateResults(data.cast.slice(0, 19))
         console.log(data)
@@ -49,7 +49,7 @@ export default function Search({ match, search, location }) {
 
   return <div className='container'>
     <div className='columns is-multiline'>{results.map((result, index) => {
-      return <div key={index} className='column is-one-fifth card-image'>
+      return <div key={index} className='column is-one-fifth card-image grow3'>
         <Link to={{
           pathname: '/project-2/result/',
           state: { resultState: result.id }

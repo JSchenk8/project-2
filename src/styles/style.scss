@@ -24,10 +24,68 @@ $input-shadow: none;
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/bulma.sass";
 
+#input-size{
+  width: 400px;
+}
+#search-box{
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left:50%; 
+  margin-left: -220px;
+  margin-top: -75px;
+}
 .shadow{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+
 .blueBackground{
   background-image: radial-gradient( mintcream, white 50%);;
+}
+.grow{
+  -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 100ms ease-in;
+    transform: scale(1);  
+    animation: swell 5s infinite;
+}
+.grow2{
+  -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 100ms ease-in;
+    transform: scale(1);  
+    animation: swell 10s infinite;
+}
+.grow3:hover img{
+  -webkit-transition: all 100ms ease-in;
+  -webkit-transform: scale(1.05);
+  -ms-transition: all 100ms ease-in;
+  -ms-transform: scale(1.05);   
+  -moz-transition: all 100ms ease-in;
+  -moz-transform: scale(1.05);
+  transition: all 100ms ease-in;
+  transform: scale(1.05);
+}
+  
+
+
+@keyframes swell {
+  0%,  100% {
+    transform: scale(1.00);
+  }
+
+
+  50% {
+    transform: scale(1.04);
+  }
 }

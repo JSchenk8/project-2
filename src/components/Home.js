@@ -21,8 +21,10 @@ export default function Home() {
   }, [])
 
   const createRandomMoviePosters = () => {
-    return moviePosterURLs.map((movie) => {
-      return <div key={movie.id} className='column is-2'>
+    return moviePosterURLs.map((movie, index) => {
+
+      return <div key={movie.id} className={index % 2 === 0 ? 'column is-2-desktop is-4-tablet is-6-mobile grow' : 'column is-2-desktop is-4-tablet is-6-mobile grow2'}>
+
         <div className='card shadow'>
           <div className='card-image'>
             <figure className='image is-2by3'>
@@ -31,13 +33,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+
     })
   }
 
 
   return <div className='blueBackground'>
-    <Search />
-    <div className='columns is-multiline'>{createRandomMoviePosters()}</div>
+
+    <div className='columns is-multiline'>{createRandomMoviePosters()}<Search /></div>
   </div>
 
 }
@@ -49,24 +53,23 @@ function Search() {
     console.log(input, option)
   }, [input])
   console.log(option)
-  return <div className='modal is-active'>
-    <div className='box has-text-centered'>
-      <div className='modal-content'>
-        <div>
-          <input className='input is-rounded m-2' onKeyUp={(event) => updateInput(event.target.value)} type='text' placeholder='What are you searching for?' />
-        </div>
-        <div className='select is-rounded m-2'>
-          <select onChange={(event) => updateOption(event.target.value)} >
-            <option value='Title'>Title</option>
-            <option value='Actor'>Actor</option>
-          </select>
-        </div>
-        <Link to={{
-          pathname: '/project-2/search/',
-          state: { optionState: option, inputState: input }
-        }}  ><button className='button is-rounded m-2'>Search!</button></Link>
-      </div >
-    </div>
+  return <div className='box has-text-centered' id='search-box'>
+    <div className='content'>
+      <div>
+        <input className='input is-rounded p-2' id='input-size' onKeyUp={(event) => updateInput(event.target.value)} type='text' placeholder='What are you searching for?' />
+      </div>
+      <div className='select is-rounded m-2'>
+        <select onChange={(event) => updateOption(event.target.value)} >
+          <option value='Title'>Title</option>
+          <option value='Actor'>Actor</option>
+        </select>
+      </div>
+      <Link to={{
+        pathname: '/project-2/search/',
+        state: { optionState: option, inputState: input }
+      }}  ><button className='button is-rounded m-2'>Search!</button></Link>
+    </div >
   </div>
+
 }
 
