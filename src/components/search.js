@@ -59,7 +59,7 @@ export default function Search({ location }) {
   return <div className='container'>
     <div className='columns is-multiline'>{results.map((result, index) => {
       return <div key={index} className='column is-one-fifth card-image grow3'>
-        <Link to={result === 'error' ? { pathname: '/project-2/home' } : {
+        <Link to={result === 'error' ? { pathname: '/project-2/' } : {
           pathname: '/project-2/result/',
           state: { resultState: result.id }
         }} >

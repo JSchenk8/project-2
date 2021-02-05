@@ -9,7 +9,7 @@ export default function NavBar() {
     <nav className='navbar m2 p2' role='navigation'>
       <div className='navbar-brand'>
         <div className='navbar-item'>
-          <Link to={'/project-2/home'}>Home</Link>
+          <Link to={'/project-2/'}>Home</Link>
         </div>
         <div className='navbar-item'>
           <Link to={'/project-2/about'}>About</Link>
