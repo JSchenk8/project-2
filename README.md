@@ -36,10 +36,9 @@ The App:
 Use the deployed version here:
 
 At Clement's Github:
-[https://clem-code.github.io/project-2/
-]()
+[](https://clem-code.github.io/project-2/)
 or at Joseph's Github:
-[https://JSchenk8.github.io/project-2/]()
+[](https://JSchenk8.github.io/project-2/)
 
 <img align = 'center' src='./demo.gif' >
 
