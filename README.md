@@ -31,7 +31,7 @@ The Technologies Used:
 
 The App:
 
-*Film_Finder* is a simple app built with React and making use of RESTful APIs that allows the user to search for films either by title or by actor. The app will acccept search terms and then produce a film for the user on the basis of the search term. The outcome will be a single page with some information about the film and some suggestions for related films that the user might be interested in.
+*Film_Finder* is a simple app built with React and making use of RESTful APIs that allows the user to search for films either by title or by actor. The app will accept search terms and then produce a film for the user on the basis of the search term. The outcome will be a single page with some information about the film and some suggestions for related films that the user might be interested in.
 
 Use the deployed version here:
 
@@ -48,7 +48,7 @@ or at Joseph's Github:
 
 ### _Planning_
 
-We spent a long time planning out this app and that was definitely time well-spent. Together we chewed over the choice of API for several hours and once we'd selected one Joseph made extensive plans using Ziteboard. Choosing the right API was clearly key to the success of the project. We wanted to make something fun and useful, but also use technologies that would allow us to experiment with our knowledge of React, React-Router, and APIs. (At this point we'd only been learning about all of these things for 10 days!) We selected the Movie DB API, both because it was comprehensive and therefore a useful resource for the user but also complex enough in its documentation that it would test us as programmers! But we also decided early on that we would try and pair this API with other, related APIs, and quickly settled on the idea of using the New York Times' film review API to find matching reviews for the films our user searched for.
+We spent a long time planning out this app and that was definitely time well-spent. Together we chewed over the choice of API for several hours and once we'd selected one Joseph made extensive plans using Ziteboard. Choosing the right API was clearly key to the success of the project. We wanted to make something fun and useful but also use technologies that would allow us to experiment with our knowledge of React, React-Router, and APIs (at this point we'd only been learning about all of these things for 10 days!). We selected the Movie DB API, both because it was comprehensive and therefore a useful resource for the user but also complex enough in its documentation that it would test us as programmers! But we also decided early on that we would try and pair this API with other, related APIs, and quickly settled on the idea of using the New York Times' film review API to find matching reviews for the films our user searched for.
 
 Once we'd selected an API we planned out the flow of our app. As one of the requirements was that it would have several pages we created a flowchart that represented the different stages of the App.
 
@@ -78,7 +78,7 @@ In our code it eventually looked like this:
 
 <b><p align = 'center'>Pair Programming</p></b>
 
-This project was as much about testing our capacity to work as a team as it was about our coding skills. Whilst we had been working collaboratively throughout the course, this was our first time pair-programming full-time on a project and seeing it through together from conception to deployment. Due to the COVID 19 pandemic, the entire boot camp was taking place remotely and so naturally we were pair-programming remotely as well. Throughout, Clement was in London and Joseph was in Sussex. We were in contact throughout via Slack and Zoom. Additionally, we'd set up the Visual Studio Code's Live Share functionality. However, we quickly found out that this was <i>very</i> laggy and so we made the decision that one of us would do the typing while the other watched and guided via Zoom screenshare.
+This project was as much about testing our capacity to work as a team as it was about our coding skills. Whilst we had been working collaboratively throughout the course, this was our first time pair-programming full-time on a project and seeing it through together from conception to deployment. Due to the COVID 19 pandemic, the entire boot camp was taking place remotely and so naturally we were pair-programming remotely as well. Throughout, Clement was in London and Joseph was in Sussex. We were in contact via Slack and Zoom. Additionally, we'd set up the Visual Studio Code's Live Share functionality. However, we quickly found out that this was <i>very</i> laggy and so we made the decision that one of us would do the typing while the other watched and guided via Zoom screenshare.
 
 
 <b><p align = 'center'>The Home Page</p></b>
@@ -123,7 +123,7 @@ In essence, this code involves two pieces of state, input and option, which reco
 
 Getting this part to work was one of the first real challenges we had. It took a couple of hours and much scouring of the React-Router documentation, but we got there in the end!
 
-To decorate the page we used an fetch request to grab 12 movie posters from the Movie DB API and had them in the background. Everytime the page reloads another set of 12 will be selected, keeping it looking fresh!
+To decorate the page we used a fetch request to grab 12 movie posters from the Movie DB API and had them in the background. Everytime the page reloads another set of 12 will be selected, keeping it looking fresh!
 
 The code looked like this:
 
