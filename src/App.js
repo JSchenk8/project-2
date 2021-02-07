@@ -7,7 +7,8 @@ import About from './components/about'
 import Result from './components/result'
 import './styles/style.scss'
 
-
+//! This is the base for our browser router, creating the four pages of our SPA.
+//! Navbar is above the switch, so it is present on all pages.
 const App = () => (
   <BrowserRouter >
     <NavBar />

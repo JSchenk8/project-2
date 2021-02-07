@@ -1,6 +1,7 @@
 import React from 'react'
 
-
+//! A simple about page, describing ourselves and our project. 
+// ? Links at the bottom give access to our Github profiles, opening in new tabs.
 export default function About() {
 
 

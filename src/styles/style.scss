@@ -1,3 +1,5 @@
+//! SCSS File to change Bulma's default variables and add additional classes.
+
 @charset "utf-8";
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
@@ -23,9 +25,11 @@ $input-shadow: none;
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/bulma.sass";
 
+//* Size of input box on home page
 #input-size{
   width: 400px;
 }
+//* Position search box in centre of page. 
 #search-box{
   position: fixed;
   z-index: 2;
@@ -34,10 +38,12 @@ $input-shadow: none;
   margin-left: -220px;
   margin-top: -75px;
 }
+//* Add a shadow to elements. 
 .shadow{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+//* Grow and Grow2 are applied alternately to movie posters on the home page. The different animation times gives the
+//* random effect to the posters, adding an element of dynamism to the display.
 .grow{
   -webkit-transition: all 100ms ease-in;
     -webkit-transform: scale(1); 
@@ -60,6 +66,8 @@ $input-shadow: none;
     transform: scale(1);  
     animation: swell 10s infinite;
 }
+//* Grow 3 is applied to all movie poster links on the search and result page, this way when a user hovers their mouse over 
+//* these elements the poster grows 5%. 
 .grow3:hover img{
   -webkit-transition: all 100ms ease-in;
   -webkit-transform: scale(1.05);

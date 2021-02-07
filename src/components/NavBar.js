@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-//! Styling imports?
+
+
+//! Navbar component, nested at the top of all pages so that it appears throughout the SPA
+//? Contains two react router 'links' to open the home page or the about page. 
+//? Styled using Bulma's 'navbar' classes. 
 
 export default function NavBar() {
 

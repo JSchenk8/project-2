@@ -2,13 +2,18 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+//! The search page of our SPA. Once a user has input a title or actor, this is the page which is displayed. 
+//! If title is selected, all movies which contain a title are displayed (for example: 'matrix' returns all the films in the trilogy)
+//! If actor is selected, all films by this actor are displayed. 
+
 export default function Search({ location }) {
+  //* State to hold the search results and actor ID
   const [results, updateResults] = useState([])
   const [actorID, updateActorID] = useState(null)
 
   let input = location.state.inputState
   input = input.replace(' ', '-').toLowerCase()
-
+  //* This receives the 'option' from the dropdown on the home page and turns it into the keywords for the API. 
   function declareOption() {
     if (location.state.optionState === 'title') {
 
@@ -21,7 +26,7 @@ export default function Search({ location }) {
   }
   const option = declareOption()
   useEffect(() => {
-
+    //* For title, only one fetch is required
     if (option === 'movie') {
       axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=${process.env.apikey}`)
         .then(({ data }) => {
@@ -33,6 +38,8 @@ export default function Search({ location }) {
 
         })
     }
+    //* However, if a person is searched, first the actor is fetched, and from this their ID is input to a second fetch to get their 
+    //* full list of credits.
     if (option === 'person') {
       axios.get(`https://api.themoviedb.org/3/search/${option}?query=${input}&api_key=${process.env.apikey}`)
         .then(({ data }) => {
@@ -56,6 +63,9 @@ export default function Search({ location }) {
       })
   }, [actorID])
 
+  //* The display for the results. A bulma column container is used to hold card images for each poster. 
+  //* Each poster is itself a link which will take the user onto the 'results' page. 
+  //* A class of 'grow3' is added to animate the cards, so that on :hover the image grows. 
   return <div className='container'>
     <div className='columns is-multiline'>{results.map((result, index) => {
       return <div key={index} className='column is-one-fifth card-image grow3'>

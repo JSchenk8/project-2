@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
 
-  //state for input
 
 
   //! Movie Covers Display
+  // ? This state holds an array of paths to give our twelve posters on the home page. 
+  // ? The API provides 500 pages of 'popular movie' posters, so we use a random number
+  // ? to generate a different set of twelve posters every time the page loads.
   const [moviePosterURLs, updatemoviePosterURLs] = useState([])
 
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/popular?page=${Math.floor(Math.random() * 500) + 1}&api_key=${process.env.apikey}`)
       .then(({ data }) => {
+        // * Update State with first 12 posters.
         updatemoviePosterURLs(data.results.slice(0, 12))
         console.log(data)
         console.log(data.results)
@@ -20,6 +23,10 @@ export default function Home() {
       })
   }, [])
 
+  // ! This function displays the twelve posters on the home page
+  // ? Each poster is a bulma component 'card' with the correct aspect ratio
+  // ? The class 'shadow' gives it the background shadow
+  // ? It is run inside of a 'columns' class, to display correctly. 
   const createRandomMoviePosters = () => {
     return moviePosterURLs.map((movie, index) => {
 
@@ -38,7 +45,7 @@ export default function Home() {
     })
   }
 
-
+  // ! Display the background posters. 
   return <div className='blueBackground'>
 
     <div className='columns is-multiline'>{createRandomMoviePosters()}<Search /></div>
@@ -46,6 +53,11 @@ export default function Home() {
 
 }
 
+//! The key component to the home page, the search function
+//? The search bar updates the state 'input' to save the value the user has typed
+//? The dropdown bar updates the state 'option' to save whether the user is looking for an actor or title
+//? The search button activates a react router 'link' to open the search component page and pass it the state
+//? for input and dropdown. 
 function Search() {
   const [input, updateInput] = useState('')
   const [option, updateOption] = useState('title')
