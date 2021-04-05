@@ -33,7 +33,7 @@ The App:
 
 *Film_Finder* is a simple app built with React and making use of RESTful APIs that allows the user to search for films either by title or by actor. The app will accept search terms and then produce a film for the user on the basis of the search term. The outcome will be a single page with some information about the film and some suggestions for related films that the user might be interested in.
 
-Use the deployed version here: [deployedversion](https://josephschenk.com/project-2/)
+Use the deployed version here: [FilmFinder](https://josephschenk.com/project-2/)
 
 At Clement's Github:
 [https://clem-code.github.io/project-2/](https://clem-code.github.io/project-2/)
