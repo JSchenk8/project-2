@@ -35,10 +35,7 @@ The App:
 
 Use the deployed version here: [FilmFinder](https://josephschenk.com/project-2/)
 
-At Clement's Github:
-[https://clem-code.github.io/project-2/](https://clem-code.github.io/project-2/)
-or at Joseph's Github:
-[https://JSchenk8.github.io/project-2/](https://JSchenk8.github.io/project-2/)
+
 
 <img align = 'center' src='./demo.gif' >
 
@@ -47,7 +44,11 @@ or at Joseph's Github:
 
 ### _Planning_
 
-We spent a long time planning out this app and that was definitely time well-spent. Together we chewed over the choice of API for several hours and once we'd selected one Joseph made extensive plans using Ziteboard. Choosing the right API was clearly key to the success of the project. We wanted to make something fun and useful but also use technologies that would allow us to experiment with our knowledge of React, React-Router, and APIs (at this point we'd only been learning about all of these things for 10 days!). We selected the Movie DB API, both because it was comprehensive and therefore a useful resource for the user but also complex enough in its documentation that it would test us as programmers! But we also decided early on that we would try and pair this API with other, related APIs, and quickly settled on the idea of using the New York Times' film review API to find matching reviews for the films our user searched for.
+We spent a long time planning out this app and that was definitely time well-spent. Together we chewed over the choice of API for several hours and once we'd selected one I made extensive plans using Ziteboard. 
+
+Choosing the right API was clearly key to the success of the project. We wanted to make something fun and useful but also use technologies that would allow us to experiment with our knowledge of React, React-Router, and APIs. We selected the Movie DB API, both because it was comprehensive and therefore a useful resource for the user but also complex enough in its documentation that it would test us as programmers! 
+
+But we also decided early on that we would try and pair this API with other, related APIs, and quickly settled on the idea of using the New York Times' film review API to find matching reviews for the films our user searched for.
 
 Once we'd selected an API we planned out the flow of our app. As one of the requirements was that it would have several pages we created a flowchart that represented the different stages of the App.
 
@@ -77,7 +78,9 @@ In our code it eventually looked like this:
 
 <b><p align = 'center'>Pair Programming</p></b>
 
-This project was as much about testing our capacity to work as a team as it was about our coding skills. Whilst we had been working collaboratively throughout the course, this was our first time pair-programming full-time on a project and seeing it through together from conception to deployment. Due to the COVID 19 pandemic, the entire boot camp was taking place remotely and so naturally we were pair-programming remotely as well. Throughout, Clement was in London and Joseph was in Sussex. We were in contact via Slack and Zoom. Additionally, we'd set up the Visual Studio Code's Live Share functionality. However, we quickly found out that this was <i>very</i> laggy and so we made the decision that one of us would do the typing while the other watched and guided via Zoom screenshare.
+This project was as much about testing our capacity to work as a team as it was about our coding skills. Whilst we had been working collaboratively throughout the course, this was our first time pair-programming full-time on a project and seeing it through together from conception to deployment. Due to the COVID 19 pandemic, the entire boot camp was taking place remotely and so naturally we were pair-programming remotely as well. Throughout, Clement was in London and I was in Sussex.
+
+We were in contact via Slack and Zoom. Additionally, we'd set up the Visual Studio Code's Live Share functionality. However, we quickly found out that this was <i>very</i> laggy and so we made the decision that one of us would do the typing while the other watched and guided via Zoom screenshare.
 
 
 <b><p align = 'center'>The Home Page</p></b>
@@ -246,9 +249,7 @@ By consensus we took a 'less is more' approach to design. One of the cool things
 
 We did make one important design decision however: we wanted to use Bulma throughout. We both felt pretty comfortable using vanilla HTML and CSS to style a page so by using Bulma we were pushing ourselves a bit out of our comfort zone. 
 
-How did we find it?
-
-Well, Bulma made the styling quite easy. We liked the colour schemes and the dimensions that Bulma provided. In terms of the code, it meant <i>a lot</i> of close-reading of the Bulma documentation, usually with one person reading the docs aloud and the other coding out their instructions! In terms of challenges, using Bulma meant having to do the layout the Bulma way, which, again, took us out of Flex-Box comfort zone, but in the end made the app look great.
+We found Bulma made the styling quite easy. We liked the colour schemes and the dimensions that Bulma provided. In terms of the code, it meant <i>a lot</i> of close-reading of the Bulma documentation, usually with one person reading the docs aloud and the other coding out their instructions! In terms of challenges, using Bulma meant having to do the layout the Bulma way, which, again, took us out of Flex-Box comfort zone, but in the end made the app look great.
 
 Finally, we made use of Bulma to add some responsive features to our home page:
 
@@ -291,6 +292,10 @@ Also, you can see in here we added some light animation through the 'grow' and '
 * We were going to add some more animation to the home page so the film posters would update -- but we ran out of time!
 * Likewise, we wanted to add more search parameters (genre and decade were two obvious ones).
 
+<b><p>What I Learnt</p></b>
+
+* On top of everything mentioned, it was great to experiment with CSS animations to get our website to look a little dynamic. I hadn't implemented animations before and Clement's neat asynchronous grow CSS for the home page was a great learning point. 
+* Pair programming was something I was intimidated by, especially in terms of communicating effectively and not frustrating each other. However, I definitely felt we worked well together and I got in a good flow of expressing what I thought was the best coding solution. 
 
 
 
