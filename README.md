@@ -292,6 +292,12 @@ Also, you can see in here we added some light animation through the 'grow' and '
 * We were going to add some more animation to the home page so the film posters would update -- but we ran out of time!
 * Likewise, we wanted to add more search parameters (genre and decade were two obvious ones).
 
+<b><p>Known Bugs</p></b>
+
+* For a number of the movies the NYT never wrote a review, so there is a header for 'Review' but with no content. In future, I would add a condition so that it only renders the title if a review actually exists.
+* Sometimes the page won't pull all the movie images for a search, so the dynamic look of the search results is somewhat ruined by the missing films. 
+
+
 <b><p>What I Learnt</p></b>
 
 * On top of everything mentioned, it was great to experiment with CSS animations to get our website to look a little dynamic. I hadn't implemented animations before and Clement's neat asynchronous grow CSS for the home page was a great learning point. 
